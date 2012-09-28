@@ -1,0 +1,14 @@
+%h1
+  Tax Years
+%table
+  %tr
+    %th
+      Year
+
+    - @years.each do |year|
+      %tr
+        %td
+          =year.year
+
+        %td
+          = link_to 'Edit', edit_form1120_path( :id =>year )

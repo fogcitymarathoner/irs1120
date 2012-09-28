@@ -1,0 +1,967 @@
+%h1
+  Edit 1120 for Year
+  =@year.year
+.tax-form		
+  %form{ :action => save_form1120_path , :method => "post"} 
+    %fieldset  
+      %h2 1120 Page 1
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "year"} Year:
+        .tax-item
+          %input{:type => "text", 
+		  :name => 'year', 
+		  :id => 'year', 
+		  :class => 'tax-input-readonly', 
+		  :readonly => 'readonly',
+		  :value=>"%4d" %@year.year}	
+        .tax-good
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "gross_receipts_line1a"} Gross Receipts Line 1a:
+        .tax-item.gross-profit-term
+          %input{:type => "text", 
+		  :name => "gross_receipts_line1a", 
+		  :id => 'gross_receipts_line1a', 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.gross_receipts_line1a}	
+        .tax-good
+	
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "expense_cost_of_goods_sold_line2"} Expenses Cost of Goods Sold Line 2:
+        .tax-item.gross-profit-term
+          %input{:type => "text", 
+		  :name => "expense_cost_of_goods_sold_line2", 
+		  :id => "expense_cost_of_goods_sold_line2", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.expense_cost_of_goods_sold_line2}
+        .tax-good
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "gross_profit_line3"} Gross Profit Line 3:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "gross_profit_line3", 
+		  :id => "gross_profit_line3", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.gross_profit_line3}
+        .tax-good
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "interest_income_line5"} Interest Income Line 5:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "interest_income_line5",
+          :id => 'interest_income_line5',		  
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.interest_income_line5}
+        .tax-good
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "total_income_line11"} Total Income Line 11:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "total_income_line11", 
+		  :class => 'tax-input-readonly', 
+		  :id => 'total_income_line11',
+		  :value=>"%5.2f" %@year.total_income_line11}
+        .tax-good
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "compensation_of_officers_line_12"} Compensation of Officers Line 12:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "compensation_of_officers_line_12", 
+		  :id => "compensation_of_officers_line_12", 
+		  :class => 'tax-input-readonly',  
+		  :value=>	"%5.2f" %@year.compensation_of_officers_line_12}
+        .tax-good
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "salary_and_wages_expense_employee_pay_line13"} Salary and Wages Expense Employee Pay Line 13:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "salary_and_wages_expense_employee_pay_line13", 
+		  :id => "salary_and_wages_expense_employee_pay_line13", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.salary_and_wages_expense_employee_pay_line13}
+        .tax-good
+
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "bad_debts"} Bad Debts:
+        .tax-item
+          %input{:type => "text", :name => "bad_debts", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bad_debts}
+	
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "expense_rents_line16"} Expenses Rent Line 16:
+        .tax-item
+          %input{:type => "text", :name => "expense_rents_line16", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.expense_rents_line16}
+        .tax-good
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "expense_taxes_licenses_line17"} Expenses Taxes and Licenses Line 17:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "expense_taxes_licenses_line17", 
+		  :name => "expense_taxes_licenses_line17", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.expense_taxes_licenses_line17}
+        .tax-good
+	
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "expense_interest_line18"} Expenses Interest Line 18:
+        .tax-item
+          %input{:type => "text", :name => "expense_interest_line18", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.expense_interest_line18}
+        .tax-good
+	
+		
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "expense_advertising_line23"} Expenses Advertizing Line 23:
+        .tax-item
+          %input{:type => "text", :name => "expense_advertising_line23", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.expense_advertising_line23}
+        .tax-good
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "expense_employee_benefit_line25"} Expenses Employee Benefits Line 25:
+        .tax-item
+          %input{:type => "text", :name => "expense_employee_benefit_line25", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.expense_employee_benefit_line25}
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "other_deductions_line26"} Other Deductions Line 26:
+        .tax-item
+          %input{:type => "text", :name => "other_deductions_line26", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.other_deductions_line26}
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "total_deductions_line27"} Total Deductions Line 27:
+        .tax-item
+          %input{:type => "text", :name => "total_deductions_line27", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.total_deductions_line27}
+
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "special_deductions_line29b"} Special Deductions Line 29b:
+        .tax-item
+          %input{:type => "text", :name => "special_deductions_line29b", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.special_deductions_line29b}
+					  
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "deposits_32d"} Deposits 32d
+        .tax-item
+          %input{:type => "text", :name => "deposits_32d", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.deposits_32d}
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "deposits_32h"} Deposits 32h:
+        .tax-item
+          %input{:type => "text", :name => "deposits_32h", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.deposits_32h}
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "federal_tax_rate"} Federal Tax Rate:
+        .tax-item
+          %input{:type => "text", :name => "federal_tax_rate", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.federal_tax_rate}
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "income_tax_line31"} Income Tax Line 31:
+        .tax-item
+          %input{:type => "text", :name => "income_tax_line31", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.income_tax_line31}
+		
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "previous_years_refund_applied_line32c"} Previous Years Refund Applied Line 32c:
+        .tax-item
+          %input{:type => "text", :name => "previous_years_refund_applied_line32c", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.previous_years_refund_applied_line32c}
+	
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "taxable_income_line30"} Taxable Income Line 30:
+        .tax-item
+          %input{:type => "text", :name => "taxable_income_line30", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.taxable_income_line30}
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "taxable_income_before_less_line28"} Taxable Income Before Less Line 28:
+        .tax-item
+          %input{:type => "text", :name => "taxable_income_before_less_line28", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.taxable_income_before_less_line28}
+	
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "tax_due_line34"} Tax Due Line 34:
+        .tax-item
+          %input{:type => "text", :name => "tax_due_line34", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.tax_due_line34}
+
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "tax_over_payment_line35"} Tax Over Payment Line 35:
+        .tax-item
+          %input{:type => "text", :name => "tax_over_payment_line35", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.tax_over_payment_line35}
+	
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "tax_penalty_line33"} Tax Penalty Line 33:
+        .tax-item
+          %input{:type => "text", :name => "tax_penalty_line33", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.tax_penalty_line33}
+	
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "tax_refund_line36"} Tax Refund Line 36:
+        .tax-item
+          %input{:type => "text", :name => "tax_refund_line36", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.tax_refund_line36}
+	
+
+      %h2 1120 Balance Sheet	
+      %h3 Assets
+      .tax-field
+        .tax-label
+          %label{:for => "bsCash_l1"} Cash_l1:
+        .tax-item
+          %input{:type => "text", :name => "bsCash_l1", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsCash_l1}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsar_l2"} Accounts Receivable_l2:
+        .tax-item
+          %input{:type => "text", :name => "bsar_l2", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsar_l2}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsothercurrentassets"} Other Current Assets _6:
+        .tax-item
+          %input{:type => "text", :name => "bsothercurrentassets", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsothercurrentassets}
+
+      .tax-field
+        .tax-label.calc
+          %label{:for => "bstotalassets_l15"} Total Assets_l15:
+        .tax-item
+          %input{:type => "text", :name => "bstotalassets_l15", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.bstotalassets_l15}
+	
+      %h3 Liabilities
+      .tax-field
+        .tax-label
+          %label{:for => "bsap_l16"} Accounts Payable_l16:
+        .tax-item
+          %input{:type => "text", :name => "bsap_l16", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsap_l16}
+
+        .tax-label.calc
+          %label{:for => "bsotherliabilites_l18"} bsotherliabilites_l18:
+        .tax-item
+          %input{:type => "text", :name => "bsotherliabilites_l18", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.bsotherliabilites_l18}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsloansfromshareholders"} bsloansfromshareholders:
+        .tax-item
+          %input{:type => "text", :name => "bsloansfromshareholders", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsloansfromshareholders}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsstock_line22"} bsstock_line22:
+        .tax-item
+          %input{:type => "text", :name => "bsstock_line22", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsstock_line22}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsretainedearnings_line25"} bsretainedearnings_line25:
+        .tax-item
+          %input{:type => "text", :name => "bsretainedearnings_line25", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsretainedearnings_line25}
+
+      .tax-field
+        .tax-label.calc
+          %label{:for => "bstotalliabilities_line30"} bstotalliabilities_line30:
+        .tax-item
+          %input{:type => "text", :name => "bstotalliabilities_line30", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.bstotalliabilities_line30}
+      %h4 Balance Sheet Other Liabilities Schedule
+      .tax-field
+      .tax-field
+        .tax-label
+          %label{:for => "bsotherliabilityCAPITSDI"} bsotherliabilityCAPITSDI:
+        .tax-item
+          %input{:type => "text", :name => "bsotherliabilityCAPITSDI", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsotherliabilityCAPITSDI}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsotherliabilityCASUIETT"} bsotherliabilityCASUIETT:
+        .tax-item
+          %input{:type => "text", :name => "bsotherliabilityCASUIETT", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsotherliabilityCASUIETT}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsotherliabilityDirectDeposit"} bsotherliabilityDirectDeposit:
+        .tax-item
+          %input{:type => "text", :name => "bsotherliabilityDirectDeposit", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsotherliabilityDirectDeposit}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsotherliabilityFederalPayrollTax"} bsotherliabilityFederalPayrollTax:
+        .tax-item
+          %input{:type => "text", :name => "bsotherliabilityFederalPayrollTax", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsotherliabilityFederalPayrollTax}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsotherliabilityPayroll"} bsotherliabilityPayroll:
+        .tax-item
+          %input{:type => "text", :name => "bsotherliabilityPayroll", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsotherliabilityPayroll}
+
+      .tax-field
+        .tax-label
+          %label{:for => "bsotherliabilitySIMPLEIRA"} bsotherliabilitySIMPLEIRA:
+        .tax-item
+          %input{:type => "text", :name => "bsotherliabilitySIMPLEIRA", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsotherliabilitySIMPLEIRA}
+
+      %h4 Balance Sheet Extra Fields
+      .tax-field
+        .tax-label
+          %label{:for => "bsopenbalanceequity"} bsopenbalanceequity:
+        .tax-item
+          %input{:type => "text", :name => "bsopenbalanceequity", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.bsopenbalanceequity}
+
+      %h2 1120 Expense Schedule	
+      .tax-field
+        .tax-label
+          %label{:for => "exp_accounting"} exp_accounting:
+        .tax-item
+          %input{:type => "text", :name => "exp_accounting", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_accounting}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_auto"} exp_auto:
+        .tax-item
+          %input{:type => "text", :name => "exp_auto", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_auto}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_bankcharges"} exp_bankcharges:
+        .tax-item
+          %input{:type => "text", :name => "exp_bankcharges", 
+		  :class => @class ,
+		  :value=>"%5.2f" %@year.exp_bankcharges}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_computer"} exp_computer:
+        .tax-item
+          %input{:type => "text", :name => "exp_computer", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_computer}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_dues_and_subscriptions"} exp_dues_and_subscriptions:
+        .tax-item
+          %input{:type => "text", :name => "exp_dues_and_subscriptions", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_dues_and_subscriptions}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_form100_deposits"} exp_form100_deposits:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_form100_deposits", 
+		  :name => "exp_form100_deposits", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_form100_deposits}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_form100_settlement"} exp_form100_settlement:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_form100_settlement", 
+		  :name => "exp_form100_settlement", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_form100_settlement}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_form1120_deposits"} exp_form1120_deposits:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_form1120_deposits",
+		  :name => "exp_form1120_deposits", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_form1120_deposits}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_form1120_settlement"} exp_form1120_settlement:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_form1120_settlement", 
+		  :name => "exp_form1120_settlement", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_form1120_settlement}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_indepentdent_consultants"} exp_indepentdent_consultants:
+        .tax-item
+          %input{:type => "text", :name => "exp_indepentdent_consultants", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_indepentdent_consultants}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_ins_liability"} exp_ins_liability:
+        .tax-item
+          %input{:type => "text", :name => "exp_ins_liability", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_ins_liability}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_ins_workers_comp"} exp_ins_workers_comp:
+        .tax-item
+          %input{:type => "text", :name => "exp_ins_workers_comp", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_ins_workers_comp}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_meals"} exp_meals:
+        .tax-item
+          %input{:type => "text", :name => "exp_meals", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_meals}
+
+      .tax-field
+        .tax-label.calc
+          %label{:for => "exp_meals_50_percent"} exp_meals_50_percent:
+        .tax-item
+          %input{:type => "text", :name => "exp_meals_50_percent", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.exp_meals_50_percent}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_office"} exp_office:
+        .tax-item
+          %input{:type => "text", :name => "exp_office", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_office}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_payroll"} exp_payroll:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_payroll", 
+		  :name => "exp_payroll", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_payroll}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_payroll_other"} exp_payroll_other:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_payroll_other", 
+		  :name => "exp_payroll_other", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_payroll_other}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_payroll_taxes"} exp_payroll_taxes:
+        .tax-item
+          %input{:type => "text", :name => "exp_payroll_taxes", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_payroll_taxes}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_postage"} exp_postage:
+        .tax-item
+          %input{:type => "text", :name => "exp_postage", 
+		  :class =>@class,  
+		  :value=>"%5.2f" %@year.exp_postage}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_postage_adjust"} exp_postage_adjust:
+        .tax-item
+          %input{:type => "text", :name => "exp_postage_adjust", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.exp_postage_adjust}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_tax_1120_refund"} exp_tax_1120_refund:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "exp_tax_1120_refund", 
+		  :id => "exp_tax_1120_refund", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_tax_1120_refund}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_taxes_other"} exp_taxes_other:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_taxes_other", 
+		  :name => "exp_taxes_other", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.exp_taxes_other}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_telephone"} exp_telephone:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_telephone", 
+		  :name => "exp_telephone", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.exp_telephone}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_telephone_isp"} exp_telephone_isp:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "exp_telephone_isp", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.exp_telephone_isp}
+
+      .tax-field
+        .tax-label.calc
+          %label{:for => "exp_total_tax_pl"} exp_total_tax_pl:
+        .tax-item
+          %input{:type => "text", 
+		  :id => "exp_total_tax_pl", 
+		  :name => "exp_total_tax_pl", 
+		  :class =>'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.exp_total_tax_pl}
+
+      .tax-field
+        .tax-label
+          %label{:for => "exp_travel"} exp_travel:
+        .tax-item
+          %input{:type => "text", :name => "exp_travel", 
+		  :class =>@class,  
+		  :value=>"%5.2f" %@year.exp_travel}
+      %h2 Officers Income
+	  
+      .tax-field
+        .tax-label
+          %label{:for => "marcs_gross"} marcs_gross:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "marcs_gross", 
+		  :id => "marcs_gross", 
+		  :class => @class,  
+		  :value=>"%5.2f" %@year.marcs_gross}
+
+      .tax-field
+        .tax-label
+          %label{:for => "sherees_gross"} sherees_gross:
+        .tax-item
+          %input{:type => "text", 
+		  :name => "sherees_gross", 
+		  :id => "sherees_gross", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.sherees_gross}
+
+      %h2 California Form 100	
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_estimated_payments"} frm_100_estimated_payments:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_estimated_payments", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.frm_100_estimated_payments}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_min_tax"} frm_100_min_tax:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_min_tax", 
+		  :class =>'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.frm_100_min_tax}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_pg_1_18_19"} frm_100_pg_1_18_19:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_pg_1_18_19", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_pg_1_18_19}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_pg_1_9"} frm_100_pg_1_9:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_pg_1_9", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_pg_1_9}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_a_form_100_exp"} frm_100_sch_a_form_100_exp:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_a_form_100_exp", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_sch_a_form_100_exp}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_a_total"} frm_100_sch_a_total:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_a_total", 
+		  :class =>'tax-input-readonly',   
+		  :value=>"%5.2f" %@year.frm_100_sch_a_total}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_f_11"} frm_100_sch_f_11:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_f_11", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_sch_f_11}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_f_12"} frm_100_sch_f_12:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_f_12", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_sch_f_12}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_f_26a"} frm_100_sch_f_26a:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_f_26a", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_sch_f_26a}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_f_26a_adjust"} frm_100_sch_f_26a_adjust:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_f_26a_adjust", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_sch_f_26a_adjust}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_f_26b"} frm_100_sch_f_26b:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_f_26b", 
+		  :class => 'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_sch_f_26b}
+
+      .tax-field
+        .tax-state
+        .tax-label
+          %label{:for => "frm_100_sch_f_26b_adjust"} frm_100_sch_f_26b_adjust:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_f_26b_adjust", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.frm_100_sch_f_26b_adjust}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_f_27"} frm_100_sch_f_27:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_f_27", 
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.frm_100_sch_f_27}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_sch_f_3"} frm_100_sch_f_3:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_sch_f_3", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_sch_f_3}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm_100_tax_pg_1_24"} frm_100_tax_pg_1_24:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_tax_pg_1_24", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm_100_tax_pg_1_24}
+
+      .tax-field
+        .tax-state
+        .tax-label
+          %label{:for => "frm_100_tax_rate"} frm_100_tax_rate:
+        .tax-item
+          %input{:type => "text", :name => "frm_100_tax_rate", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.frm_100_tax_rate}
+
+      .tax-field
+        .tax-state
+        .tax-label
+          %label{:for => "frm_3885_depreciation"} frm_3885_depreciation:
+        .tax-item
+          %input{:type => "text", :name => "frm_3885_depreciation", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.frm_3885_depreciation}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "income_reconciliation_difference"} income_reconciliation_difference:
+        .tax-item
+          %input{:type => "text", :name => "income_reconciliation_difference", 
+		  :class =>'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.income_reconciliation_difference}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "m1_6"} m1_6:
+        .tax-item
+          %input{:type => "text", :name => "m1_6", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.m1_6}
+
+      .tax-field
+        .tax-state
+        .tax-label
+          %label{:for => "m1_non_taxable_income_7"} m1_non_taxable_income_7:
+        .tax-item
+          %input{:type => "text", :name => "m1_non_taxable_income_7", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.m1_non_taxable_income_7}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "m1_taxable_income_before_less"} m1_taxable_income_before_less:
+        .tax-item
+          %input{:type => "text", :name => "m1_taxable_income_before_less", 
+		  :class =>'tax-input-readonly',   
+		  :value=>"%5.2f" %@year.m1_taxable_income_before_less}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "netincome_books"} netincome_books:
+        .tax-item
+          %input{:type => "text", :name => "netincome_books", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.netincome_books}
+
+      .tax-field
+        .tax-state
+        .tax-label
+          %label{:for => "nol_29a"} nol_29a:
+        .tax-item
+          %input{:type => "text", :name => "nol_29a", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.nol_29a}
+
+      .tax-field
+        .tax-state
+        .tax-label
+          %label{:for => "other_increases"} other_increases:
+        .tax-item
+          %input{:type => "text", :name => "other_increases", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.other_increases}
+
+      .tax-field
+        .tax-state
+        .tax-label
+          %label{:for => "pl_interest_income"} pl_interest_income:
+        .tax-item
+          %input{:type => "text", :name => "pl_interest_income", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.pl_interest_income}
+
+      .tax-field
+        .tax-state
+        .tax-label
+          %label{:for => "previous_year"} previous_year:
+        .tax-item
+          %input{:type => "text", :name => "previous_year", 
+		  :class =>@class, 
+		  :value=>"%5.2f" %@year.previous_year}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "retained_earnings_M2_sch"} retained_earnings_M2_sch:
+        .tax-item
+          %input{:type => "text", :name => "retained_earnings_M2_sch", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.retained_earnings_M2_sch}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "retained_earnings_unappropriated"} retained_earnings_unappropriated:
+        .tax-item
+          %input{:type => "text", :name => "retained_earnings_unappropriated", 
+		  :class =>'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.retained_earnings_unappropriated}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "total_expense_books"} total_expense_books:
+        .tax-item
+          %input{:type => "text", :name => "total_expense_books", 
+		  :class =>'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.total_expense_books}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "tax_over_payment_line35"} tax_over_payment_line35:
+        .tax-item
+          %input{:type => "text", :name => "tax_over_payment_line35", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.tax_over_payment_line35}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm100_refund_applied_to_next_year_42a"} frm100_refund_applied_to_next_year_42a:
+        .tax-item
+          %input{:type => "text", :name => "frm100_refund_applied_to_next_year_42a", 
+		  :class =>'tax-input-readonly',  
+		  :value=>"%5.2f" %@year.frm100_refund_applied_to_next_year_42a}
+
+      .tax-field
+        .tax-state
+        .tax-label.calc
+          %label{:for => "frm100tax_due_37"} frm100tax_due_37:
+        .tax-item
+          %input{:type => "text", :name => "frm100tax_due_37", 
+		  :class =>'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.frm100tax_due_37}
+
+    %input{:type => "submit", :value => "Send", :class => "button"}

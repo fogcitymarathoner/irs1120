@@ -1,0 +1,57 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//* style.scss 
+.tax-form {
+	.tax-field {
+	  width: 34em;
+	  overflow:hidden;
+	}
+	.tax-label {
+	  width: 21em;
+	  color: #FFFFFF;
+	  background-color: #000000;
+	  float: left;
+	  
+	}
+	.tax-label.calc {
+	  background-color: green;
+	}
+	.tax-item  {
+	  float: left;
+	}
+	.tax-input {
+	  width: 6em;
+	  color: #000000;
+	  background-color: #FFFFFF;
+	  text-align: right;
+	}
+
+	.tax-input-readonly {
+	  width: 6em;
+	  color: #000000;
+	  background-color: red;
+	  text-align: right;
+	}
+	.tax-input-empty {
+	  width: 6em;
+	  color: red;
+	  background-color: #FFFFFF;
+	  text-align: right;
+	}
+	.tax-fed  {
+	  float: left;
+	  background-color: blue;
+	  padding:10px;
+	}
+	.tax-state  {
+	  float: left;
+	  background-color: orange;
+	  padding:10px;
+	}
+	.tax-good  {
+	  float: left;
+	  background-color: purple;
+	  padding:10px;
+	}
+}
