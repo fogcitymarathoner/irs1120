@@ -11,7 +11,7 @@ gem "haml"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3'
-gem 'pg'
+gem 'pg', '0.14.1'
 
 
 # Gems used only for assets and not required
