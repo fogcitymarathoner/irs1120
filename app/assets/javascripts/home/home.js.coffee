@@ -16,16 +16,18 @@ compensation_of_officers_line_12 = ->
   $('#compensation_of_officers_line_12').val compensation_of_officers_line_12_calc.toFixed(2)
   
 salary_and_wages_expense_employee_pay_line13 = ->
-  salary_and_wages_expense_employee_pay_line13_calc =parseFloat($('#compensation_of_officers_line_12').attr 'value') + parseFloat($('#exp_payroll_other').attr 'value')
+  salary_and_wages_expense_employee_pay_line13_calc =parseFloat($('#exp_payroll').attr 'value')+
+    parseFloat($('#exp_payroll_taxes').attr 'value') +
+    parseFloat($('#exp_payroll_other').attr 'value')
   $('#salary_and_wages_expense_employee_pay_line13').val salary_and_wages_expense_employee_pay_line13_calc.toFixed(2)
   
 expense_taxes_licenses_line17 = ->
   expense_taxes_licenses_line17_calc =   parseFloat($('#exp_tax_1120_refund').attr 'value') + 
-  parseFloat($('#exp_form1120_deposits').attr 'value') + 
-  parseFloat($('#exp_form1120_settlement').attr 'value') + 
-  parseFloat($('#exp_form100_settlement').attr 'value') + 
-  parseFloat($('#exp_form100_deposits').attr 'value') + 
-  parseFloat($('#exp_taxes_other').attr 'value')
+    parseFloat($('#exp_form1120_deposits').attr 'value') +
+    parseFloat($('#exp_form1120_settlement').attr 'value') +
+    parseFloat($('#exp_form100_settlement').attr 'value') +
+    parseFloat($('#exp_form100_deposits').attr 'value') +
+    parseFloat($('#exp_taxes_other').attr 'value')
   $('#expense_taxes_licenses_line17').val expense_taxes_licenses_line17_calc.toFixed(2)
   $('#exp_total_tax_pl').val expense_taxes_licenses_line17_calc.toFixed(2)
 
@@ -57,7 +59,7 @@ $ ->
 $ ->
   $('input.tax-input').blur ->
    do_calculations()
-   
+
    $('input.tax-input').each ->
      if parseFloat($(this).attr 'value') == 0.00
        $(this).addClass 'tax-input-empty'

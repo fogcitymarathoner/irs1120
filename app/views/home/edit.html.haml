@@ -107,6 +107,7 @@
           %input{:type => "text", :name => "bad_debts", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.bad_debts}
+        .tax-good
 	
       .tax-field
         .tax-fed
@@ -159,6 +160,7 @@
           %input{:type => "text", :name => "expense_employee_benefit_line25", 
 		  :class => 'tax-input-readonly',  
 		  :value=>"%5.2f" %@year.expense_employee_benefit_line25}
+        .tax-good
 
       .tax-field
         .tax-fed
@@ -168,6 +170,7 @@
           %input{:type => "text", :name => "other_deductions_line26", 
 		  :class => 'tax-input-readonly', 
 		  :value=>"%5.2f" %@year.other_deductions_line26}
+        .tax-good
 
       .tax-field
         .tax-fed
@@ -177,6 +180,7 @@
           %input{:type => "text", :name => "total_deductions_line27", 
 		  :class => 'tax-input-readonly', 
 		  :value=>"%5.2f" %@year.total_deductions_line27}
+        .tax-good
 
       .tax-field
         .tax-fed
@@ -577,7 +581,8 @@
         .tax-label
           %label{:for => "exp_payroll_taxes"} exp_payroll_taxes:
         .tax-item
-          %input{:type => "text", :name => "exp_payroll_taxes", 
+          %input{:type => "text", :name => "exp_payroll_taxes",
+		  :id => "exp_payroll_taxes",
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_payroll_taxes}
 
