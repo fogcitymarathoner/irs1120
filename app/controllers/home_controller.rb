@@ -2,7 +2,7 @@ require 'pp'
 class HomeController < ApplicationController
   def years
 
-    @years = Form1120.find(:all)
+    @years = Form1120.find(:all,:order=>'year ASC')
   end
 
 
