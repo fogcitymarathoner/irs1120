@@ -194,19 +194,44 @@
       .tax-field
         .tax-fed
         .tax-label.calc
+          %label{:for => "deposits_32b"} Deposits 32b
+        .tax-item
+          %input{:type => "text", :name => "deposits_32b", 
+	          :id => 'deposits_32b',
+		  :class => 'tax-input-readonly'}
+        .tax-good	
+		
+      .tax-field
+        .tax-fed
+        .tax-label
+          %label{:for => "previous_years_refund_applied_line32c"} Previous Years Refund Applied Line 32c:
+        .tax-item
+          %input{:type => "text", :name => "previous_years_refund_applied_line32c", 
+		  :id => "previous_years_refund_applied_line32c", 
+		  :class => @class, 
+		  :value=>"%5.2f" %@year.previous_years_refund_applied_line32c}
+        .tax-good	
+		  
+      .tax-field
+        .tax-fed
+        .tax-label.calc
           %label{:for => "deposits_32d"} Deposits 32d
         .tax-item
           %input{:type => "text", :name => "deposits_32d", 
+	          :id => 'deposits_32d',
 		  :class => 'tax-input-readonly', 
 		  :value=>"%5.2f" %@year.deposits_32d}
+        .tax-good
       .tax-field
         .tax-fed
         .tax-label.calc
           %label{:for => "deposits_32h"} Deposits 32h:
         .tax-item
           %input{:type => "text", :name => "deposits_32h", 
+	          :id => 'deposits_32h',
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.deposits_32h}
+        .tax-good	
       .tax-field
         .tax-fed
         .tax-label
@@ -223,16 +248,6 @@
           %input{:type => "text", :name => "income_tax_line31", 
 		  :class => 'tax-input-readonly', 
 		  :value=>"%5.2f" %@year.income_tax_line31}
-		
-      .tax-field
-        .tax-fed
-        .tax-label.calc
-          %label{:for => "previous_years_refund_applied_line32c"} Previous Years Refund Applied Line 32c:
-        .tax-item
-          %input{:type => "text", :name => "previous_years_refund_applied_line32c", 
-		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.previous_years_refund_applied_line32c}
-	
       .tax-field
         .tax-fed
         .tax-label.calc

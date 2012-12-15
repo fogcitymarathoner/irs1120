@@ -31,12 +31,29 @@ expense_taxes_licenses_line17 = ->
   $('#expense_taxes_licenses_line17').val expense_taxes_licenses_line17_calc.toFixed(2)
   $('#exp_total_tax_pl').val expense_taxes_licenses_line17_calc.toFixed(2)
 
-do_calculations = ->   
+deposits_32b = ->
+  deposits_32b_calc = parseFloat($('#exp_form1120_deposits').attr 'value')
+  $('#deposits_32b').val deposits_32b_calc.toFixed(2)
+  return
+deposits_32d = ->
+  deposits_32d_calc = parseFloat($('#exp_form1120_deposits').attr 'value') +
+    parseFloat($('#previous_years_refund_applied_line32c').attr 'value')
+  $('#deposits_32d').val deposits_32d_calc.toFixed(2)
+
+deposits_32h = ->
+  deposits_32h_calc = parseFloat($('#exp_form1120_deposits').attr 'value') +
+    parseFloat($('#previous_years_refund_applied_line32c').attr 'value')
+  $('#deposits_32h').val deposits_32h_calc.toFixed(2)
+
+do_calculations = ->
    gross_profit_line3()
    total_income_line11()
    compensation_of_officers_line_12()
    salary_and_wages_expense_employee_pay_line13()
    expense_taxes_licenses_line17()
+   deposits_32b()
+   deposits_32d()
+   deposits_32h()
    
 
 zero = 0
