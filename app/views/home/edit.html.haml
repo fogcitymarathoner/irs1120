@@ -115,6 +115,7 @@
           %label{:for => "expense_rents_line16"} Expenses Rent Line 16:
         .tax-item
           %input{:type => "text", :name => "expense_rents_line16", 
+	          :id => 'expense_rents_line16',
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.expense_rents_line16}
         .tax-good
@@ -137,6 +138,7 @@
           %label{:for => "expense_interest_line18"} Expenses Interest Line 18:
         .tax-item
           %input{:type => "text", :name => "expense_interest_line18", 
+	          :id => 'expense_interest_line18',
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.expense_interest_line18}
         .tax-good
@@ -148,16 +150,18 @@
           %label{:for => "expense_advertising_line23"} Expenses Advertizing Line 23:
         .tax-item
           %input{:type => "text", :name => "expense_advertising_line23", 
+	          :id => 'expense_advertising_line23',
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.expense_advertising_line23}
         .tax-good
 
       .tax-field
         .tax-fed
-        .tax-label.calc
+        .tax-label
           %label{:for => "expense_employee_benefit_line25"} Expenses Employee Benefits Line 25:
         .tax-item
           %input{:type => "text", :name => "expense_employee_benefit_line25", 
+	          :id => 'expense_employee_benefit_line25',
 		  :class => 'tax-input-readonly',  
 		  :value=>"%5.2f" %@year.expense_employee_benefit_line25}
         .tax-good
@@ -178,6 +182,7 @@
           %label{:for => "total_deductions_line27"} Total Deductions Line 27:
         .tax-item
           %input{:type => "text", :name => "total_deductions_line27", 
+	          :id => 'total_deductions_line27',
 		  :class => 'tax-input-readonly', 
 		  :value=>"%5.2f" %@year.total_deductions_line27}
         .tax-good
@@ -191,6 +196,25 @@
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.special_deductions_line29b}
 					  
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "taxable_income_line30"} Taxable Income Line 30:
+        .tax-item
+          %input{:type => "text", :name => "taxable_income_line30", 
+	          :id => 'taxable_income_line30',
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.taxable_income_line30}
+      .tax-field
+        .tax-fed
+        .tax-label.calc
+          %label{:for => "income_tax_line31"} Income Tax Line 31:
+        .tax-item
+          %input{:type => "text", :name => "income_tax_line31", 
+	          :id => 'income_tax_line31',
+		  :class => 'tax-input-readonly', 
+		  :value=>"%5.2f" %@year.income_tax_line31}
+
       .tax-field
         .tax-fed
         .tax-label.calc
@@ -240,23 +264,6 @@
           %input{:type => "text", :name => "federal_tax_rate", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.federal_tax_rate}
-      .tax-field
-        .tax-fed
-        .tax-label.calc
-          %label{:for => "income_tax_line31"} Income Tax Line 31:
-        .tax-item
-          %input{:type => "text", :name => "income_tax_line31", 
-		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.income_tax_line31}
-      .tax-field
-        .tax-fed
-        .tax-label.calc
-          %label{:for => "taxable_income_line30"} Taxable Income Line 30:
-        .tax-item
-          %input{:type => "text", :name => "taxable_income_line30", 
-		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.taxable_income_line30}
-
       .tax-field
         .tax-fed
         .tax-label.calc
