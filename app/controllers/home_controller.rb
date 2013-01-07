@@ -18,10 +18,8 @@ class HomeController < ApplicationController
   end
   
   def edit
-  
     @year = Form1120.find(params[:id])
     @class ="tax-input"
-    pp @year
   end
   def save_form1120
     form = Form1120.find_by_year(params[:year])

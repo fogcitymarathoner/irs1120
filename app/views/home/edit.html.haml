@@ -49,7 +49,7 @@
 		  :name => "gross_profit_line3", 
 		  :id => "gross_profit_line3", 
 		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.gross_profit_line3}
+		  :value=>"%5.2f" %@year.gross_profit_line3_calc}
         .tax-good
       .tax-field
         .tax-fed
@@ -72,7 +72,7 @@
 		  :name => "total_income_line11", 
 		  :class => 'tax-input-readonly', 
 		  :id => 'total_income_line11',
-		  :value=>"%5.2f" %@year.total_income_line11}
+		  :value=>"%5.2f" %@year.total_income_line11_calc}
         .tax-good
 
       .tax-field
@@ -84,7 +84,7 @@
 		  :name => "compensation_of_officers_line_12", 
 		  :id => "compensation_of_officers_line_12", 
 		  :class => 'tax-input-readonly',  
-		  :value=>	"%5.2f" %@year.compensation_of_officers_line_12}
+		  :value=>	"%5.2f" %@year.compensation_of_officers_line_12_calc}
         .tax-good
 
       .tax-field
@@ -96,7 +96,7 @@
 		  :name => "salary_and_wages_expense_employee_pay_line13", 
 		  :id => "salary_and_wages_expense_employee_pay_line13", 
 		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.salary_and_wages_expense_employee_pay_line13}
+		  :value=>"%5.2f" %@year.salary_and_wages_expense_employee_pay_line13_calc}
         .tax-good
 
       .tax-field
@@ -114,7 +114,8 @@
         .tax-label
           %label{:for => "expense_rents_line16"} Expenses Rent Line 16:
         .tax-item
-          %input{:type => "text", :name => "expense_rents_line16", 
+          %input{:type => "text", 
+		  :name => "expense_rents_line16", 
 	          :id => 'expense_rents_line16',
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.expense_rents_line16}
@@ -129,7 +130,7 @@
 		  :id => "expense_taxes_licenses_line17", 
 		  :name => "expense_taxes_licenses_line17", 
 		  :class => 'tax-input-readonly',  
-		  :value=>"%5.2f" %@year.expense_taxes_licenses_line17}
+		  :value=>"%5.2f" %@year.expense_taxes_licenses_line17_calc}
         .tax-good
 	
       .tax-field
@@ -137,7 +138,8 @@
         .tax-label
           %label{:for => "expense_interest_line18"} Expenses Interest Line 18:
         .tax-item
-          %input{:type => "text", :name => "expense_interest_line18", 
+          %input{:type => "text", 
+		  :name => "expense_interest_line18", 
 	          :id => 'expense_interest_line18',
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.expense_interest_line18}
@@ -171,9 +173,11 @@
         .tax-label.calc
           %label{:for => "other_deductions_line26"} Other Deductions Line 26:
         .tax-item
-          %input{:type => "text", :name => "other_deductions_line26", 
+          %input{:type => "text", 
+		  :name => "other_deductions_line26",  
+		  :id => "other_deductions_line26", 
 		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.other_deductions_line26}
+		  :value=>"%5.2f" %@year.other_deductions_line26_calc}
         .tax-good
 
       .tax-field
@@ -184,7 +188,7 @@
           %input{:type => "text", :name => "total_deductions_line27", 
 	          :id => 'total_deductions_line27',
 		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.total_deductions_line27}
+		  :value=>"%5.2f" %@year.total_deductions_line27_calc}
         .tax-good
 
       .tax-field
@@ -213,16 +217,18 @@
           %input{:type => "text", :name => "income_tax_line31", 
 	          :id => 'income_tax_line31',
 		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.income_tax_line31}
+		  :value=>"%5.2f" %@year.income_tax_line31_calc}
 
       .tax-field
         .tax-fed
         .tax-label.calc
           %label{:for => "deposits_32b"} Deposits 32b
         .tax-item
-          %input{:type => "text", :name => "deposits_32b", 
+          %input{:type => "text", 
+		  :name => "deposits_32b", 
 	          :id => 'deposits_32b',
-		  :class => 'tax-input-readonly'}
+		  :class => 'tax-input-readonly',
+		  :value => "%5.2f" %@year.deposits_32b_calc}
         .tax-good	
 		
       .tax-field
@@ -241,27 +247,31 @@
         .tax-label.calc
           %label{:for => "deposits_32d"} Deposits 32d
         .tax-item
-          %input{:type => "text", :name => "deposits_32d", 
+          %input{:type => "text", 
+		  :name => "deposits_32d", 
 	          :id => 'deposits_32d',
 		  :class => 'tax-input-readonly', 
-		  :value=>"%5.2f" %@year.deposits_32d}
+		  :value=>"%5.2f" %@year.deposits_32d_calc}
         .tax-good
       .tax-field
         .tax-fed
         .tax-label.calc
           %label{:for => "deposits_32h"} Deposits 32h:
         .tax-item
-          %input{:type => "text", :name => "deposits_32h", 
+          %input{:type => "text", 
+		  :name => "deposits_32h", 
 	          :id => 'deposits_32h',
 		  :class => @class, 
-		  :value=>"%5.2f" %@year.deposits_32h}
+		  :value=>"%5.2f" %@year.deposits_32h_calc}
         .tax-good	
       .tax-field
         .tax-fed
         .tax-label
           %label{:for => "federal_tax_rate"} Federal Tax Rate:
         .tax-item
-          %input{:type => "text", :name => "federal_tax_rate", 
+          %input{:type => "text", 
+		  :name => "federal_tax_rate", 
+		  :id => "federal_tax_rate", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.federal_tax_rate}
       .tax-field
@@ -455,7 +465,9 @@
         .tax-label
           %label{:for => "exp_accounting"} exp_accounting:
         .tax-item
-          %input{:type => "text", :name => "exp_accounting", 
+          %input{:type => "text", 
+		  :id => "exp_accounting",
+		  :name => "exp_accounting", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_accounting}
 
@@ -463,7 +475,9 @@
         .tax-label
           %label{:for => "exp_auto"} exp_auto:
         .tax-item
-          %input{:type => "text", :name => "exp_auto", 
+          %input{:type => "text", 
+		  :id => "exp_auto", 
+		  :name => "exp_auto", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_auto}
 
@@ -471,7 +485,9 @@
         .tax-label
           %label{:for => "exp_bankcharges"} exp_bankcharges:
         .tax-item
-          %input{:type => "text", :name => "exp_bankcharges", 
+          %input{:type => "text", 
+		  :id => "exp_bankcharges", 
+		  :name => "exp_bankcharges", 
 		  :class => @class ,
 		  :value=>"%5.2f" %@year.exp_bankcharges}
 
@@ -479,7 +495,9 @@
         .tax-label
           %label{:for => "exp_computer"} exp_computer:
         .tax-item
-          %input{:type => "text", :name => "exp_computer", 
+          %input{:type => "text", 
+		  :id => "exp_computer", 
+		  :name => "exp_computer", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_computer}
 
@@ -487,7 +505,9 @@
         .tax-label
           %label{:for => "exp_dues_and_subscriptions"} exp_dues_and_subscriptions:
         .tax-item
-          %input{:type => "text", :name => "exp_dues_and_subscriptions", 
+          %input{:type => "text", 
+		  :id => "exp_dues_and_subscriptions", 
+		  :name => "exp_dues_and_subscriptions", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_dues_and_subscriptions}
 
@@ -535,7 +555,9 @@
         .tax-label
           %label{:for => "exp_indepentdent_consultants"} exp_indepentdent_consultants:
         .tax-item
-          %input{:type => "text", :name => "exp_indepentdent_consultants", 
+          %input{:type => "text", 
+		  :id => "exp_indepentdent_consultants",
+		  :name => "exp_indepentdent_consultants", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_indepentdent_consultants}
 
@@ -543,7 +565,9 @@
         .tax-label
           %label{:for => "exp_ins_liability"} exp_ins_liability:
         .tax-item
-          %input{:type => "text", :name => "exp_ins_liability", 
+          %input{:type => "text", 
+		  :id => "exp_ins_liability", 
+		  :name => "exp_ins_liability", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_ins_liability}
 
@@ -551,7 +575,9 @@
         .tax-label
           %label{:for => "exp_ins_workers_comp"} exp_ins_workers_comp:
         .tax-item
-          %input{:type => "text", :name => "exp_ins_workers_comp", 
+          %input{:type => "text", 
+		  :id => "exp_ins_workers_comp", 
+		  :name => "exp_ins_workers_comp", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_ins_workers_comp}
 
@@ -559,7 +585,9 @@
         .tax-label
           %label{:for => "exp_meals"} exp_meals:
         .tax-item
-          %input{:type => "text", :name => "exp_meals", 
+          %input{:type => "text",
+		  :id => "exp_meals", 
+		  :name => "exp_meals", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_meals}
 
@@ -567,7 +595,9 @@
         .tax-label.calc
           %label{:for => "exp_meals_50_percent"} exp_meals_50_percent:
         .tax-item
-          %input{:type => "text", :name => "exp_meals_50_percent", 
+          %input{:type => "text", 
+		  :id => "exp_meals_50_percent", 
+		  :name => "exp_meals_50_percent", 
 		  :class => 'tax-input-readonly', 
 		  :value=>"%5.2f" %@year.exp_meals_50_percent}
 
@@ -575,7 +605,9 @@
         .tax-label
           %label{:for => "exp_office"} exp_office:
         .tax-item
-          %input{:type => "text", :name => "exp_office", 
+          %input{:type => "text", 
+		  :id => "exp_office", 
+		  :name => "exp_office", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_office}
 
@@ -612,7 +644,9 @@
         .tax-label
           %label{:for => "exp_postage"} exp_postage:
         .tax-item
-          %input{:type => "text", :name => "exp_postage", 
+          %input{:type => "text", 
+		  :id => "exp_postage",  
+		  :name => "exp_postage", 
 		  :class =>@class,  
 		  :value=>"%5.2f" %@year.exp_postage}
 
@@ -620,7 +654,9 @@
         .tax-label
           %label{:for => "exp_postage_adjust"} exp_postage_adjust:
         .tax-item
-          %input{:type => "text", :name => "exp_postage_adjust", 
+          %input{:type => "text", 
+		  :id => "exp_postage_adjust", 
+		  :name => "exp_postage_adjust", 
 		  :class =>@class, 
 		  :value=>"%5.2f" %@year.exp_postage_adjust}
 
@@ -659,6 +695,7 @@
           %label{:for => "exp_telephone_isp"} exp_telephone_isp:
         .tax-item
           %input{:type => "text", 
+		  :id => "exp_telephone_isp", 
 		  :name => "exp_telephone_isp", 
 		  :class => @class, 
 		  :value=>"%5.2f" %@year.exp_telephone_isp}
@@ -677,7 +714,9 @@
         .tax-label
           %label{:for => "exp_travel"} exp_travel:
         .tax-item
-          %input{:type => "text", :name => "exp_travel", 
+          %input{:type => "text", 
+		  :id => "exp_travel", 
+		  :name => "exp_travel", 
 		  :class =>@class,  
 		  :value=>"%5.2f" %@year.exp_travel}
       %h2 Officers Income
