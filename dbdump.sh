@@ -1,7 +1,4 @@
 #!/bin/bash
-#GRANT ALL ON ALL TABLES IN SCHEMA public TO strona_user;
-#GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO strona_user;
-#GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO strona_user;
-
-/usr/local/pgsql910/bin/pg_dump rrg_1120_taxes > private/dbdump.sql
+# password 'flaming'
+/usr/lib/postgresql/9.1/bin/pg_dump -p 5433 rrg_1120_taxes > ~/private/rrg_1120_taxes.sql
 
